@@ -6209,7 +6209,7 @@ and rely on Emacs' own buffering and chunking."
               ;; connected to pipe; closed it” error for a disconnection.  We
               ;; report them if needed in `flycheck-finish-checker-process' (see
               ;; `https://github.com/flycheck/flycheck/issues/1278').
-              (error (process-put process 'flycheck-error err))))
+              (error (process-put process 'flycheck-error nil))))
           ;; Set the actual sentinel and process any events that might have
           ;; happened while we were sending input.
           (setf (process-sentinel process) #'flycheck-handle-signal)
